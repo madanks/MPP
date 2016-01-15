@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public class Company {
 	private String name;
-	
+
 	private ArrayList<Department> department;
 
 	public Company(String name) {
-		
+
 		this.name = name;
 	}
 
@@ -16,8 +16,8 @@ public class Company {
 		return department;
 	}
 
-	public void setDepartment(ArrayList<Department> department) {
-		this.department = department;
+	public void addDepartment(Department department) {
+		this.department.add(department);
 	}
 
 	public String getName() {
@@ -27,27 +27,23 @@ public class Company {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	public void print()
-	{
-		
+
+	public void print() {
+
 	}
-	
-	public double getSalary()
-	{
+
+	public double getSalary() {
 		return 0;
-		
+
 	}
-	
-	public void printReportingHierarcy()
-	{
-		
+
+	public void printReportingHierarcy() {
+
 	}
-	
-	public Position getTopExecutive()
-	{
+
+	public Position getTopExecutive() {
 		return null;
-		
+
 	}
 
 }

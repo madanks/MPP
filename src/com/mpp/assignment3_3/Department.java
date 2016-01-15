@@ -16,6 +16,10 @@ public class Department {
 		this.company = company;
 	}
 
+	public void addPosition(Position p) {
+		position.add(p);
+	}
+
 	public String getName() {
 		return name;
 	}

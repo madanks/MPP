@@ -9,6 +9,15 @@ public class Employee {
 	private String date;
 	private String ssn;
 	private String salary;
+	private Position position;
+
+	public Position getPosition() {
+		return position;
+	}
+
+	public void setPosition(Position position) {
+		this.position = position;
+	}
 
 	public int getEmployeeId() {
 		return employeeId;
