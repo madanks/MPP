@@ -13,6 +13,14 @@ public class Position {
 	private ArrayList<Position> inferior;
 
 	private ArrayList<Employee> employee;
+	
+	private Department department;
+
+	public Position(String title, String description,Department department) {
+		this.title = title;
+		this.description = description;
+		this.department=department;
+	}
 
 	public void add(Employee employee) {
 		this.employee.add(employee);
@@ -47,6 +55,8 @@ public class Position {
 	}
 
 	public void print() {
+		System.out.println("Postion Title: " + title);
+		System.out.println("Postion Description: " + description);
 
 	}
 

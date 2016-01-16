@@ -8,8 +8,20 @@ public class Employee {
 	private String lastName;
 	private String date;
 	private String ssn;
-	private String salary;
+	private double salary;
 	private Position position;
+
+	public Employee(int employeeId, String firstName, String middleName, String lastName, String date, String ssn,
+			double salary, Position position) {
+		this.employeeId = employeeId;
+		this.firstName = firstName;
+		this.middleName = middleName;
+		this.lastName = lastName;
+		this.date = date;
+		this.ssn = ssn;
+		this.salary = salary;
+		this.position = position;
+	}
 
 	public Position getPosition() {
 		return position;
@@ -67,16 +79,21 @@ public class Employee {
 		this.ssn = ssn;
 	}
 
-	public String getSalary() {
+	public double getSalary() {
 		return salary;
 	}
 
-	public void setSalary(String salary) {
+	public void setSalary(double salary) {
 		this.salary = salary;
 	}
 
 	public void print() {
 
+		System.out.println("-----Employee Detail---------");
+		System.out.println("Employee Name: "+firstName+" "+middleName+" "+lastName);
+		System.out.println("Employee Birthdate: "+date);
+		System.out.println("Employee SSN: "+ ssn);
+		System.out.printf("Employee Salary: $%,.2f\n",salary);
 	}
 
 }
