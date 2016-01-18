@@ -46,8 +46,8 @@ public class Department {
 	public void print() {
 		System.out.println("  Department Name : " + getName());
 		System.out.println("  Location: " + getLocation());
-		for (Position p : pos) {
-			p.print();
+		for (Position pos : pos) {
+			pos.print();
 		}
 		System.out.println("\n");
 	}

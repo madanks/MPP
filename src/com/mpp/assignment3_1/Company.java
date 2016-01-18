@@ -25,10 +25,10 @@ public class Company {
 	}
 
 	public void print() {
-		System.out.println("Company: " + getName());
-		for (Department d : dept) {
-			d.print();
+		System.out.println("Company Name: " + getName());
+		for (Department dep : dept) {
+			dep.print();
 		}
-		System.out.println("!!!!!!!!!!!!!!!!!!!");
+		
 	}
 }

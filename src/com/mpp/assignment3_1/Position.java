@@ -44,9 +44,10 @@ public class Position {
 	public void print() {
 		System.out.println("   Position is : " + getTitle());
 		System.out.println("   Description of Position : " + getDescription());
-		for (Employee e : emp) {
-			e.print();
+		for (Employee emp : emp) {
+			emp.print();
 		}
 	}
+
 
 }

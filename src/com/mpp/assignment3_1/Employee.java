@@ -11,16 +11,15 @@ public class Employee {
 	private String SSN;
 	private double salary;
 	private Position employeePosition;
-	
-	public Employee(String id,String fname, String mname, String lname, Date dob, String ssn, double salary)
-	{
-		this.employeeID=id;
-		this.firstName=fname;
-		this.middleInitial=mname;
-		this.lastName=lname;
-		this.birthDate=dob;
-		this.SSN=ssn;
-		this.salary=salary;
+
+	public Employee(String id, String fname, String mname, String lname, Date dob, String ssn, double salary) {
+		this.employeeID = id;
+		this.firstName = fname;
+		this.middleInitial = mname;
+		this.lastName = lname;
+		this.birthDate = dob;
+		this.SSN = ssn;
+		this.salary = salary;
 	}
 
 	public String getEmployeeID() {
@@ -78,19 +77,17 @@ public class Employee {
 	public void setSalary(double salary) {
 		this.salary = salary;
 	}
-	
-	public void setPosition(Position p)
-	{
-		employeePosition=p;
+
+	public void setPosition(Position p) {
+		employeePosition = p;
 	}
 
-	public void print()
-	{
-		System.out.println("******Employee Details********");
-		System.out.println("ID: "+employeeID + "\nName: "+firstName+" "+middleInitial+" "+lastName);
-		System.out.println("DOB: "+ birthDate);
-		System.out.printf("SSN %s",SSN);
-		System.out.println("Salary: "+salary);
+	public void print() {
+		System.out.println("-----------Employee List----------");
+		System.out.println("ID: " + employeeID + "\nName: " + firstName + " " + middleInitial + " " + lastName);
+		System.out.println("DOB: " + birthDate);
+		System.out.printf("SSN %s", SSN);
+		System.out.println("Salary: " + salary);
 	}
 
 }
