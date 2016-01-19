@@ -1,6 +1,7 @@
 package com.mpp.assignment5_1;
 
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 public class Commissioned extends Employee {
@@ -10,7 +11,7 @@ public class Commissioned extends Employee {
 	private List<Order> order = new ArrayList<Order>();
 
 	@Override
-	public double calcGrossPay() {
+	public double calcGrossPay(DateRange daterang) {
 		return baseSalary + getCommission();
 
 	}

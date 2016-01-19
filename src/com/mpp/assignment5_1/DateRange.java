@@ -1,5 +1,6 @@
 package com.mpp.assignment5_1;
 
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class DateRange {
@@ -19,16 +20,21 @@ public class DateRange {
 		return false;
 	}
 
-	public GregorianCalendar getStartDate() {
-		return startDate;
+	public static GregorianCalendar getStartDate(GregorianCalendar date) {
+		date.set(GregorianCalendar.DATE, 1);
+		return date;
 	}
 
-	public GregorianCalendar getEndDate() {
-		return endDate;
+	public static GregorianCalendar getEndDate(GregorianCalendar date) {
+
+		date.set(GregorianCalendar.DATE,
+				date.getActualMaximum(Calendar.DAY_OF_MONTH));
+		return date;
 	}
 
 	public String toString() {
-		return "DateRange [startDate=" + startDate + ", endDate=" + endDate + "]";
+		return "DateRange [startDate=" + startDate + ", endDate=" + endDate
+				+ "]";
 	}
 
 	public static void getFirstDayOfMonth(GregorianCalendar date) {

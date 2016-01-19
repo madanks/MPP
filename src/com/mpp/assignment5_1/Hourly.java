@@ -1,5 +1,7 @@
 package com.mpp.assignment5_1;
 
+import java.util.GregorianCalendar;
+
 public class Hourly extends Employee {
 
 	public double hourlyWage;
@@ -11,7 +13,7 @@ public class Hourly extends Employee {
 		this.hourPerWeek = hourPerWeek;
 	}
 
-	public double calcGrossPay() {
+	public double calcGrossPay(DateRange daterang) {
 		return hourPerWeek * 4 * hourlyWage;
 
 	}
