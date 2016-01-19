@@ -10,7 +10,7 @@ public class Commissioned extends Employee {
 	private List<Order> order = new ArrayList<Order>();
 
 	@Override
-	public double calcGrossPay(DateRange dr) {
+	public double calcGrossPay() {
 		return baseSalary + getCommission();
 
 	}

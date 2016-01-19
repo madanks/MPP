@@ -11,7 +11,7 @@ public class Hourly extends Employee {
 		this.hourPerWeek = hourPerWeek;
 	}
 
-	public double calcGrossPay(DateRange dr) {
+	public double calcGrossPay() {
 		return hourPerWeek * 4 * hourlyWage;
 
 	}
