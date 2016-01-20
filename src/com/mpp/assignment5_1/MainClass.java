@@ -22,8 +22,6 @@ public class MainClass {
 		System.out.println("-------------------------------------------------");
 		System.out.printf("Gross Amount: $%,.2f\n", e3.calcGrossPay(dr));
 		e3.calcCompensation(3, 2016).getNetPay();
-
-
 	}
 
 }

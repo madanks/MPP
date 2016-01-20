@@ -1,4 +1,4 @@
-package com.mpp.assignment3_4;
+package com.mpp.assignment3;
 
 public class UPS extends Package {
 
