@@ -6,7 +6,8 @@ public class Salaried extends Employee {
 
 	public double salary;
 
-	public Salaried(double salary) {
+	public Salaried(int empid,double salary) {
+		super(empid);
 		this.salary = salary;
 	}
 

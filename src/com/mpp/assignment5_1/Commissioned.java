@@ -10,9 +10,14 @@ public class Commissioned extends Employee {
 	private double commission;
 	private List<Order> order = new ArrayList<Order>();
 
+	public Commissioned(int empid,double baseSalary) {
+		super(empid);
+		this.baseSalary = baseSalary;
+	}
+
 	@Override
 	public double calcGrossPay(DateRange daterang) {
-		return baseSalary + getCommission();
+		return baseSalary + getCommission(daterang);
 
 	}
 
@@ -20,10 +25,12 @@ public class Commissioned extends Employee {
 		order.add(o);
 	}
 
-	public double getCommission() {
+	public double getCommission(DateRange daterang) {
 		double sum = 0;
 		for (Order o : order) {
-			sum += o.getOrderAmount();
+			if (daterang.isInRange(o.getOrderDate())) {
+				sum += o.getOrderAmount();
+			}
 		}
 		return 0.07 * sum;
 	}

@@ -14,27 +14,31 @@ public class DateRange {
 	}
 
 	public boolean isInRange(GregorianCalendar date) {
-		if (startDate.after(date) && startDate.before(date)) {
+		if (date.after(startDate) && date.before(endDate)) {
 			return true;
 		}
 		return false;
 	}
 
+	public GregorianCalendar getStartDate() {
+		return startDate;
+	}
+
+	public GregorianCalendar getEndDate() {
+		return endDate;
+	}
+
 	public static GregorianCalendar getStartDate(GregorianCalendar date) {
-		date.set(GregorianCalendar.DATE, 1);
-		return date;
+		return new GregorianCalendar(date.get(GregorianCalendar.YEAR), date.get(GregorianCalendar.MONTH), 1);
 	}
 
 	public static GregorianCalendar getEndDate(GregorianCalendar date) {
-
-		date.set(GregorianCalendar.DATE,
+		return new GregorianCalendar(date.get(GregorianCalendar.YEAR), date.get(GregorianCalendar.MONTH),
 				date.getActualMaximum(Calendar.DAY_OF_MONTH));
-		return date;
 	}
 
 	public String toString() {
-		return "DateRange [startDate=" + startDate + ", endDate=" + endDate
-				+ "]";
+		return "DateRange [startDate=" + startDate + ", endDate=" + endDate + "]";
 	}
 
 	public static void getFirstDayOfMonth(GregorianCalendar date) {

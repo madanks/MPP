@@ -24,13 +24,48 @@ public class PayCheck {
 		this.employee = employee;
 	}
 
+	public double getGrossPay() {
+		return grossPay;
+	}
+
+	public double getFica() {
+		return fica;
+	}
+
+	public double getState() {
+		return state;
+	}
+
+	public double getLocal() {
+		return local;
+	}
+
+	public double getMedicare() {
+		return medicare;
+	}
+
+	public double getSocialSecurity() {
+		return socialSecurity;
+	}
+
+	public DateRange getPayPeriod() {
+		return payPeriod;
+	}
+
+	public Employee getEmployee() {
+		return employee;
+	}
+
 	public String print() {
 		return "PayCheck [grossPay=" + grossPay + ", fica=" + fica + ", state=" + state + ", local=" + local
 				+ ", medicare=" + medicare + ", socialSecurity=" + socialSecurity + ", payPeriod=" + payPeriod + "]";
 	}
 
 	public double getNetPay() {
-		return grossPay - fica - state - local - medicare - socialSecurity;
+
+		double netpay = grossPay - fica - state - local - medicare - socialSecurity;
+		System.out.printf("Net Amount: $%,.2f\n", netpay);
+		return netpay;
 	}
 
 }

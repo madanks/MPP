@@ -9,12 +9,16 @@ public abstract class Employee {
 	private int empId;
 	private List<PayCheck> paycheck = new ArrayList<PayCheck>();
 
+	public Employee(int empId) {
+		this.empId = empId;
+	}
+
 	public PayCheck calcCompensation(int month, int year) {
+		boolean flag = true;
 		GregorianCalendar cal = new GregorianCalendar();
 		cal.set(GregorianCalendar.YEAR, year);
 		cal.set(GregorianCalendar.MONTH, month);
-		DateRange dr = new DateRange(DateRange.getStartDate(cal),
-				DateRange.getEndDate(cal));
+		DateRange dr = new DateRange(DateRange.getStartDate(cal), DateRange.getEndDate(cal));
 
 		double grossAmt = calcGrossPay(dr);
 
@@ -23,10 +27,18 @@ public abstract class Employee {
 		double local = grossAmt * 0.01;
 		double medicare = grossAmt * 0.03;
 		double socialSecurity = grossAmt * 0.075;
-		PayCheck pc = new PayCheck(grossAmt, fica, state, local, medicare,
-				socialSecurity, dr, this);
-	
-		paycheck.add(pc);
+		PayCheck pc = new PayCheck(grossAmt, fica, state, local, medicare, socialSecurity, dr, this);
+		for (PayCheck paychk : paycheck) {
+			if (dr.getStartDate().equals(paychk.getPayPeriod().getStartDate())
+					&& dr.getEndDate().equals(paychk.getPayPeriod().getEndDate())) {
+				flag = false;
+				break;
+			}
+		}
+		if (flag) {
+			paycheck.add(pc);
+		}
+
 		return pc;
 	}
 
