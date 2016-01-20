@@ -56,15 +56,16 @@ public class PayCheck {
 		return employee;
 	}
 
-	public String print() {
-		return "PayCheck [grossPay=" + grossPay + ", fica=" + fica + ", state=" + state + ", local=" + local
-				+ ", medicare=" + medicare + ", socialSecurity=" + socialSecurity + ", payPeriod=" + payPeriod + "]";
+	public void print() {
+		System.out.println("PayCheck [grossPay=" + grossPay + ", fica=" + fica + ", state=" + state + ", local=" + local
+				+ ", medicare=" + medicare + ", socialSecurity=" + socialSecurity + ", payPeriod="
+				+ payPeriod.toString() + ", Net Pay=" + getNetPay() + "]");
+
 	}
 
 	public double getNetPay() {
 
 		double netpay = grossPay - fica - state - local - medicare - socialSecurity;
-		System.out.printf("Net Amount: $%,.2f\n", netpay);
 		return netpay;
 	}
 

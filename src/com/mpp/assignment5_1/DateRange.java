@@ -37,8 +37,9 @@ public class DateRange {
 				date.getActualMaximum(Calendar.DAY_OF_MONTH));
 	}
 
+	@Override
 	public String toString() {
-		return "DateRange [startDate=" + startDate + ", endDate=" + endDate + "]";
+		return "DateRange [startDate="+startDate.get(GregorianCalendar.MONTH)+"-" +startDate.get(GregorianCalendar.DATE) +"-"+startDate.get(GregorianCalendar.YEAR) + ", endDate=" + +endDate.get(GregorianCalendar.MONTH)+"-" +endDate.get(GregorianCalendar.DATE) +"-"+endDate.get(GregorianCalendar.YEAR)  + "]";
 	}
 
 	public static void getFirstDayOfMonth(GregorianCalendar date) {
