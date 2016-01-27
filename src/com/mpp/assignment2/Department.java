@@ -35,21 +35,15 @@ public class Department {
 	public void showAllMembers() {
 		for (Object p : person) {
 			if (p instanceof Faculty) {
-				System.out.printf(
-						"\nName : %s  Phone : %s Age : %d Type : Faculty",
-						((Faculty) p).getName(), ((Faculty) p).getPhone(),
-						((Faculty) p).getAge(), ((Faculty) p));
+				System.out.printf("\nName : %s  Phone : %s Age : %d Type : Faculty", ((Faculty) p).getName(),
+						((Faculty) p).getPhone(), ((Faculty) p).getAge(), ((Faculty) p));
 			} else if (p instanceof Staff) {
-				System.out.printf(
-						"\nName : %s  Phone : %s Age : %d Type : Faculty",
-						((Staff) p).getName(), ((Staff) p).getPhone(),
-						((Staff) p).getAge());
+				System.out.printf("\nName : %s  Phone : %s Age : %d Type : Faculty", ((Staff) p).getName(),
+						((Staff) p).getPhone(), ((Staff) p).getAge());
 
 			} else {
-				System.out.printf(
-						"\nName : %s  Phone : %s Age : %d Type : Faculty",
-						((Student) p).getName(), ((Student) p).getPhone(),
-						((Student) p).getAge());
+				System.out.printf("\nName : %s  Phone : %s Age : %d Type : Faculty", ((Student) p).getName(),
+						((Student) p).getPhone(), ((Student) p).getAge());
 
 			}
 		}
@@ -59,10 +53,8 @@ public class Department {
 	public void unitsPerFaculty() {
 		for (Object p : person) {
 			if (p instanceof Faculty) {
-				System.out.printf(
-						"\nName : %s  Phone : %s Age : %d Units : %d\n",
-						((Faculty) p).getName(), ((Faculty) p).getPhone(),
-						((Faculty) p).getAge(), ((Faculty) p).getTotalUnits());
+				System.out.printf("\nName : %s  Phone : %s Age : %d Units : %d\n", ((Faculty) p).getName(),
+						((Faculty) p).getPhone(), ((Faculty) p).getAge(), ((Faculty) p).getTotalUnits());
 
 			}
 		}
@@ -76,9 +68,10 @@ public class Department {
 	public void facultyStudent() {
 		for (Object p : person) {
 			if (p instanceof Faculty) {
-				//System.out.println("Faculty Member:" + ((Faculty) p).getName());
+				// System.out.println("Faculty Member:" + ((Faculty)
+				// p).getName());
 				System.out
-						.println("-------------------Faculty Member:" + ((Faculty) p).getName()+"------------------");
+						.println("-------------------Faculty Member:" + ((Faculty) p).getName() + "------------------");
 				for (Object pp : person) {
 					if (pp instanceof Student) {
 						if (((Student) pp).isFaculty((Faculty) p)) {
@@ -91,17 +84,6 @@ public class Department {
 					}
 
 				}
-
-				/*
-				 * for (Object pp : person) { if (!(p instanceof Staff)) { if
-				 * (((Course) p).getTitle().equals( ((Course) pp).getTitle())) {
-				 * 
-				 * if (p instanceof StaffStudent) {
-				 * System.out.println(" StaffStudent Name:" + ((StaffStudent)
-				 * p).getName()); } else if (p instanceof Student) {
-				 * System.out.println("Student Name:" + ((Student)
-				 * p).getName()); } } } }
-				 */
 
 			}
 		}
