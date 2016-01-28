@@ -19,7 +19,7 @@ public class Question_2_a {
 
 		// question 1
 		// here {e -> e.getLastName().charAt(0) == 'R'} is a predicate
-		System.out.printf("Number of Employee with last name B are : %d\n",
+		System.out.printf("1. Number of Employee with last name B are : %d\n",
 				list.stream().filter(e -> e.getLastName().startsWith("B")).count());
 
 		// question 2
@@ -31,12 +31,39 @@ public class Question_2_a {
 		Function<Employee, Double> bySalary = Employee::getSalary;
 		Comparator<Employee> sortby = Comparator.comparing(byLastName).thenComparing(byFirstName)
 				.thenComparing(byLastName).thenComparing(byDepartment).thenComparing(bySalary);
-
+		System.out.printf("\n2. Display Employee Object in sorted order:\n");
 		list.stream().filter(e -> e.getLastName().startsWith("B")).sorted(sortby).forEach(System.out::println);
 
 		// question 3
-		//list.stream().filter(e -> e.getLastName().startsWith("B")).forEach(System.out::println);
+		System.out.printf("\n3. Display Employee Object with firstname and lastname to uppercase:\n");
+		list.stream().filter(e -> e.getLastName().startsWith("B")).map(e -> new Employee(e.getFirstName().toUpperCase(),
+				e.getLastName().toUpperCase(), e.getSalary(), e.getDepartment())).forEach(System.out::println);
 
+		// question 4
+		System.out.printf("\n4. Display Employee Object with and lastname to uppercase if lastname starts with B:\n");
+		list.stream().forEach(e -> {
+			if (e.getLastName().startsWith("B")) {
+				System.out.println(new Employee(e.getFirstName(), e.getLastName().toUpperCase(), e.getSalary(),
+						e.getDepartment()));
+			} else {
+				System.out.println(new Employee(e.getFirstName(), e.getLastName(), e.getSalary(), e.getDepartment()));
+			}
+		});
+
+		System.out.printf(
+				"\n5. Display all Employees whose last name begains with letter I in sorted order and remove all duplicate:\n\n");
+		list.stream().filter(e -> e.getLastName().startsWith("I")).map(e -> e.getLastName()).sorted().distinct()
+				.forEach(System.out::println);
+		System.out.printf("\n6. Display the average salary of all employee : %,.2f\n",
+				list.stream().mapToDouble(Employee::getSalary).average().getAsDouble());
+
+		System.out.printf("\n7. Display the total salary of all employee using reduce : %,.2f\n\n",
+				list.stream().mapToDouble(Employee::getSalary).reduce(0, (value1, value2) -> value1 + value2));
+		System.out.println("8. Print first name of all employee :");
+
+		list.stream().map(e -> e.getFirstName()).forEach(System.out::println);
+		
+		
 	}
 
 }

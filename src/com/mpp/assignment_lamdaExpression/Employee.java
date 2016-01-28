@@ -1,6 +1,6 @@
 package com.mpp.assignment_lamdaExpression;
 
-public class Employee {
+public class Employee  {
 	private String firstName;
 	private String lastName;
 	private double salary;
