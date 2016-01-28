@@ -1,4 +1,4 @@
-package com.mpp.assignment.lamdaExpression;
+package com.mpp.assignment_lamdaExpression;
 
 import java.util.Arrays;
 import java.util.Comparator;

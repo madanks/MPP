@@ -1,4 +1,4 @@
-package com.mpp.assignment.lamdaExpression;
+package com.mpp.assignment_lamdaExpression;
 
 public class Employee {
 	private String firstName;

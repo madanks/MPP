@@ -1,4 +1,4 @@
-package com.mpp.assignment.JUNIT;
+package com.mpp.assignment_JUNIT;
 
 import org.junit.Test;
 
