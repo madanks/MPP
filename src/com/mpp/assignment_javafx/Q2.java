@@ -40,37 +40,62 @@ public class Q2 extends Application {
 
 		TextField txtOutput = new TextField();
 		grid.add(txtOutput, 6, 5);
-		/*
-		 * Label street = new Label("Street "); grid.add(street, 3, 1);
-		 * 
-		 * TextField txtStreet = new TextField(); grid.add(txtStreet, 3, 2);
-		 * 
-		 * Label city = new Label("City "); grid.add(city, 5, 1);
-		 * 
-		 * TextField txtCity = new TextField(); grid.add(txtCity, 5, 2);
-		 * 
-		 * Label state = new Label("State "); grid.add(state, 2, 3);
-		 * 
-		 * TextField txtState = new TextField(); grid.add(txtState, 2, 4);
-		 * 
-		 * Label zip = new Label("Zip "); grid.add(zip, 4, 3);
-		 * 
-		 * TextField txtZip = new TextField(); grid.add(txtZip, 4, 4);
-		 * 
-		 * Button btn = new Button("Submit"); HBox hbBtn = new HBox(10);
-		 * hbBtn.setAlignment(Pos.BOTTOM_RIGHT); hbBtn.getChildren().add(btn);
-		 * grid.add(hbBtn, 3, 5);
-		 * 
-		 * btn.setOnAction(new EventHandler<ActionEvent>() {
-		 * 
-		 * @Override public void handle(ActionEvent e) {
-		 * 
-		 * System.out.println(txtName.getText());
-		 * System.out.println(txtStreet.getText());
-		 * System.out.println(txtCity.getText());
-		 * System.out.println(txtState.getText());
-		 * System.out.println(txtZip.getText()); } });
-		 */
+
+		btnCount.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				if (txtInput.getText().trim().equals("") || txtInput.getText().trim().equals(null)) {
+
+				} else {
+					int count = txtInput.getText().length();
+					txtOutput.setText(Integer.toString(count));
+				}
+
+			}
+		});
+
+		reverseLetter.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				if (txtInput.getText().trim().equals("") || txtInput.getText().trim().equals(null)) {
+
+				} else {
+					String revString = "";
+					for (int i = 0; i < txtInput.getText().trim().length(); i++) {
+						revString = txtInput.getText().charAt(i) + revString;
+					}
+					txtOutput.setText(revString);
+				}
+
+			}
+		});
+
+		removeDuplicate.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				if (txtInput.getText().trim().equals("") || txtInput.getText().trim().equals(null)) {
+
+				} else {
+					String remove = "" + txtInput.getText().charAt(0);
+					for (int i = 1; i < txtInput.getText().trim().length(); i++) {
+						boolean flag = true;
+						for (int j = 0; j < remove.length(); j++) {
+							if (txtInput.getText().charAt(i) == remove.charAt(j)) {
+								flag = false;
+							}
+						}
+						if (flag) {
+							remove += txtInput.getText().charAt(i);
+						}
+					}
+					txtOutput.setText(remove);
+				}
+
+			}
+		});
 
 		Scene scene = new Scene(grid, 400, 300);
 		primaryStage.setScene(scene);
