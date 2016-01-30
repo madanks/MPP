@@ -1,5 +1,9 @@
 package com.mpp.assignment_javafx;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.stream.Collectors;
+
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -79,19 +83,8 @@ public class Q2 extends Application {
 				if (txtInput.getText().trim().equals("") || txtInput.getText().trim().equals(null)) {
 
 				} else {
-					String remove = "" + txtInput.getText().charAt(0);
-					for (int i = 1; i < txtInput.getText().trim().length(); i++) {
-						boolean flag = true;
-						for (int j = 0; j < remove.length(); j++) {
-							if (txtInput.getText().charAt(i) == remove.charAt(j)) {
-								flag = false;
-							}
-						}
-						if (flag) {
-							remove += txtInput.getText().charAt(i);
-						}
-					}
-					txtOutput.setText(remove);
+					String[] input = txtInput.getText().split("");
+					txtOutput.setText(Arrays.asList(input).stream().distinct().collect(Collectors.joining()));
 				}
 
 			}
