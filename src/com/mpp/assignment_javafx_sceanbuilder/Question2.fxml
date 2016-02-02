@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="300.0" prefWidth="500.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="com.mpp.assignment_javafx_sceanbuilder.Q2_Controller">
+   <children>
+      <Button fx:id="btnCount" layoutX="14.0" layoutY="31.0" mnemonicParsing="false" onAction="#handle" prefHeight="39.0" prefWidth="214.0" text="Count Letters" />
+      <Button fx:id="btnReverse" layoutX="14.0" layoutY="102.0" mnemonicParsing="false" onAction="#handle" prefHeight="39.0" prefWidth="214.0" text="Reverse Letter" />
+      <Button fx:id="btnDuplicate" layoutX="14.0" layoutY="168.0" mnemonicParsing="false" onAction="#handle" prefHeight="39.0" prefWidth="214.0" text="Remove Duplicate" />
+      <Label layoutX="250.0" layoutY="43.0" prefHeight="21.0" prefWidth="42.0" text="Input" />
+      <Label layoutX="250.0" layoutY="121.0" text="Output" />
+      <TextField fx:id="txtInput" layoutX="250.0" layoutY="70.0" />
+      <TextField fx:id="txtOutput" layoutX="250.0" layoutY="148.0" />
+   </children>
+</AnchorPane>

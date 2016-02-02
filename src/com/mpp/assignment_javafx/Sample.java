@@ -21,8 +21,9 @@ public class Sample extends Application {
 		grid.setVgap(10);
 		// top, right, bottom, left
 		grid.setPadding(new Insets(25, 25, 25, 25));
-
 		Text scenetitle = new Text("Welcome");
+		scenetitle.setId("welcome");
+		scenetitle.setStyle("");
 		scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
 		grid.add(scenetitle, 0, 0, 2, 1);
 
@@ -60,6 +61,7 @@ public class Sample extends Application {
 		});
 
 		Scene scene = new Scene(grid, 300, 275);
+
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
