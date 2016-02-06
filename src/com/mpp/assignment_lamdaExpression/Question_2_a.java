@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Question_2_a {
 	public static void main(String[] args) {
@@ -62,6 +63,14 @@ public class Question_2_a {
 		System.out.println("8. Print first name of all employee :");
 
 		list.stream().map(e -> e.getFirstName()).forEach(System.out::println);
+		
+	
+	     System.out.println("\n 9. Reduce Method to find and later print out the total of All Salaries:  ");
+	     double totSalaries = list.stream().mapToDouble(Employee:: getSalary).reduce(0, (value1,value2)-> value1+value2);
+	     System.out.println(totSalaries);
+	   
+	     System.out.println("\n 10. Generate first 20 even number: ");
+	     IntStream.iterate(0, n->n+2).limit(20).forEach(System.out::println);
 		
 		
 	}
